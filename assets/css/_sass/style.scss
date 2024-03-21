@@ -210,16 +210,17 @@ em {
   color: $brand-color;
 }
 
-h2 {
-  color: $brand-color;
+h2, h2 a, p a {
+  color: $highlight-color;
 }
 
-.links.scroll {
+.links.scroll a {
   font-weight: bold;
+  color: $highlight-color;
 }
 
 hr {
   margin: 1em 0;
   border: 0;
-  border-top: 3px dotted $text-color
+  border-top: 3px dotted $highlight-color
 }

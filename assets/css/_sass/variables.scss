@@ -6,10 +6,12 @@ $base-line-height: 1.6;
 
 $spacing-unit:     50px;
 $light-gray: #555;
-$text-color:       #0ff;
+$text-color:       rgb(0, 220, 220);
 $background-color: #222;
-$brand-color:      #07c;
+// $brand-color:      #07c;
 $projectbox-text:  #1e2126;
+$highlight-color:  rgb(220, 220, 0);
+$brand-color:      $highlight-color;
 
 // Color scheme for light
 $body-bg: #222;
