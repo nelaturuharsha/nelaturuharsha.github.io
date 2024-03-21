@@ -3,8 +3,8 @@
 title: Sree Harsha Nelaturu
 description: Deep Learning Researcher
 
-baseurl: "" #name of GitHub repository
-url: "" #custom url to be used instead of GitHub repository
+baseurl: "/harsha-website" #name of GitHub repository
+url: "https://celrm.github.io/harsha-website/" #custom url to be used instead of GitHub repository
 email: nelaturu.harsha@gmail.com
 
 # Pagination
