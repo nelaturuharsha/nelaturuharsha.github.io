@@ -9,8 +9,6 @@
         <meta content="width=device-width, initial-scale=1" name="viewport">
         <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
 
-        {% seo %}
-
         {% include favicon.html %}
 
         {% include mathjax.html %}
@@ -29,17 +27,13 @@
         <footer>
           <p class="copy">
             <small> &copy; {{site.title}} {{ site.time | date: '%Y' }}
-                    | Powered by Jekyll and
-                    <a target="_blank" href="https://github.com/jitinnair1/gradfolio/">Gradfolio</a>.
-                    Last updated on {{ site.time | date_to_long_string }}
+                    | Powered by Jekyll and Gradfolio.
             </small>
           </p>
 
         {% include social-footer.html %}
 
         </footer>
-
-        {% include analytics.html %}
 
     </body>
 

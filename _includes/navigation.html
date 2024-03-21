@@ -1,6 +1,11 @@
 <div class="links scroll">
         <a href="{{site.baseurl}}/">Home</a>
-        <a href="{{site.baseurl}}/projects/">Projects</a>
+        {% assign my_array = site.pages | sort: "order" %}
+        {% for page in my_array %}
+            {% if page.title and page.title != "Archive" %}
+                <a href="{{site.baseurl}}{{page.url}}">{{page.title}}</a>
+            {% endif %}
+        {% endfor %}
         <a href="{{site.baseurl}}/blog/">Blog</a>
         <a href="{{site.baseurl}}/archive/">Archive</a>
 </div>

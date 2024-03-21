@@ -1,10 +1,14 @@
 ---
-title:
+title: Projects
 layout: default
 permalink: /projects/
 published: true
+order: 1
 ---
 
+{% for project in site.projects %}
+{{ project.title }}
+{% endfor %}
 
 <div class="ProjectContainer">
 

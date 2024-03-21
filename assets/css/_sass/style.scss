@@ -21,7 +21,6 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: bold;
   line-height: 1.8;
   margin: 0;
@@ -59,7 +58,7 @@ p a {
   -moz-transition: box-shadow ease 1s;
   transition: box-shadow ease 1s;
   &:hover {
-    color: lighten($background-color, 50%);
+    color: lighten($background-color, 0%);
     -webkit-box-shadow: inset 0 -100px 0 0 lighten($brand-color, 10%);
     box-shadow: inset 0 -100px 0 0 lighten($brand-color, 10%);
 
@@ -199,4 +198,28 @@ blockquote {
   margin: 1em 0;
 }
 
+.post-headline {
+  // color: $brand-color;
+}
 
+.post-description {
+  font-weight: bold;
+}
+
+em {
+  color: $brand-color;
+}
+
+h2 {
+  color: $brand-color;
+}
+
+.links.scroll {
+  font-weight: bold;
+}
+
+hr {
+  margin: 1em 0;
+  border: 0;
+  border-top: 3px dotted $text-color
+}

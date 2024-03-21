@@ -1,11 +1,11 @@
 ### your site title here
 
-title: Your Name
-description: subtitle | affiliations | motto
+title: Sree Harsha Nelaturu
+description: Deep Learning Researcher
 
-baseurl: /gradfolio #name of GitHub repository
+baseurl: "" #name of GitHub repository
 url: "" #custom url to be used instead of GitHub repository
-email: #
+email: nelaturu.harsha@gmail.com
 
 # Pagination
 paginate: 4
@@ -13,23 +13,11 @@ permalink: /blog/:year/:title/
 paginate_path: /blog/page:num/
 
 # Social media links in footer
-twitter: "#"
-linkedin: "#"
-stackoverflow: "#"
-github: "#"
-researchgate: "#"
-orcid: "#"
-quora: "#"
-instagram: "#"
-facebook: "#"
-
+twitter: "Sree_Harsha_N"
+github: "SreeHarshaNelaturu"
 
 # Markdown
-highlighter: rouge
 markdown: kramdown
-
-# Tracker
-analytics:
 
 # optimization -> compress.html
 compress_html:
@@ -42,32 +30,12 @@ compress_html:
   profile: false
   startings: []
 
-#collection
-collections:
-  projects:
-    output: true
-    permalink: /projects/:name/
-    order:
-      - shortProject.md
-      - longerProjectTitle.md
-      - redirect.md
-      - project4.md
-      - project5.md
-      - project6.md
-
 sass:
   sass_dir: /assets/css/_sass
   style: compressed
 
-include:
-  - _pages
+include: [_pages]
 
 exclude:
   - README.md
   - LICENSE.md
-
-plugins:
-  - jekyll-seo-tag
-  - jekyll-paginate
-  - jekyll-email-protect
-  - jekyll-target-blank

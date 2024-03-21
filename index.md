@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: default
 permalink: /
 profile:
   align: right
@@ -7,15 +7,14 @@ profile:
 published: true
 ---
 
-[Gradfolio](https://github.com/jitinnair1/gradfolio){:target="_blank"} is a responsive, dark-mode ready Jekyll theme designed keeping academia in mind. The easiest way to install the theme is to fork it using GitHub. Check the README file for [instructions](https://github.com/jitinnair1/gradfolio#installation){:target="_blank"}.
+## About Me
 
-If you want to use this space to write your biography here, edit the `index.md` file. You can put a picture in, too. Rename your picture to `profile.png` and put it in the `assets/images/` folder.
+I am currently a Graduate Student at Universitate Des Saarlandes studying *data and compute efficient deep learning in computer vision*. I am also interested in working on projects involving and at the intersection of learning theory, computational creativity, distributed systems, numerical linear algebra and optimization. Climate science, sustainability and access are the core tenets that drive my research interests.
 
-The social-icons footer can be used to link profiles from GitHub, OrcID and ReasearchGate aprart form the usual Twitter, LinkedIn and Facebook. You can add your user ID in the `_config.yml` file to link your accounts.
+During my B.Tech in ECE at SRMIST, Chennai I led and was part of Next Tech Lab, an interdisciplinary student-led research group and founded the SRM Machine Intelligence Community. I was a special student in EECS at the Massachusetts Institute of Technology, where I was an undergrad researcher at the Responsive Environments group, MIT Media Lab advised by Ishwarya Ananthabhotla and Prof Joseph Paradiso.
 
-PS: If you liked the theme, do star it on GitHub!
+Projects I have worked on for companies like RunwayML, Myelin Foundry and Rediscovery.io have involved projects on applications of deep learning to generate, enhance and process media content included but not limited to images, video and audio.
 
-### Also, check out:
+I look forward to chatting and potentially collaborating, please feel free to reach out to me via email or any other social channel.
 
-- [autoCV](https://github.com/jitinnair1/autocv) - a LaTeX template that builds and deploys the CV using GitHub Actions, so you will always have a ready link for your latest CV
-- [Tail](https://github.com/jitinnair1/tail) - a minimal, quick-setup template for a blog
+As Matt Groening once said, “Futurama is real, the Simpsons is fiction”.
