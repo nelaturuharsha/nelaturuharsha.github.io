@@ -34,7 +34,7 @@ sass:
   sass_dir: /assets/css/_sass
   style: compressed
 
-include: [_pages]
+include: [_pages, _data]
 
 exclude:
   - README.md

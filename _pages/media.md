@@ -1,18 +1,18 @@
 ---
-title: Projects
+title: Media Consumption
 layout: default
-permalink: /projects/
+permalink: /media-consumption/
 published: true
-order: 1
+order: 2
 ---
 
 <div class="ProjectContainer">
 
 	<div class="gallery">
 
-  {% assign projects = site.pages | where: "category", "project" %}
+  {% assign media = site.pages | where: "category", "media-consumption" %}
 
-  {% for project in projects %}
+  {% for project in media %}
 
   {% if project.redirect %}
   <p class="projectTile">

@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Project 4
-description: another project
+title: Short Project
+description: description of the short project which is long enough
+category: project
 ---
-
 Example modified from [here](http://www.unexpected-vortices.com/sw/rippledoc/quick-markdown-example.html){:target="_blank"}.
 
 H1 Header

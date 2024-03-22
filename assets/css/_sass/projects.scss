@@ -41,7 +41,6 @@
 .projectTile a span h2 {
   font-size: 1.5rem;
   padding: 1rem;
-  color: $projectbox-text;
 }
 
 .projectTile:hover a span h2 {
@@ -56,7 +55,6 @@
   font-size: 1.2rem;
   display: flex;
   padding: 1rem;
-  color: $projectbox-text;
 }
 
 @include media-query($on-phone) {

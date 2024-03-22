@@ -2,10 +2,17 @@
 layout: default
 ---
 
+<h2>Blog</h2>
+
 <div class="article-list">
   {% for post in paginator.posts %}
-    <h2><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
-    <p>{{post.excerpt | strip_html}}</p>
+    <h3 style="margin-bottom: -1.5rem; width: 75%;"
+    ><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h3>
+    <p style="text-align: right; color: #999; margin-top: -1.5rem;"
+    "><small>{{ post.date | date: "%b %-d, %Y" }}</small></p>
+    <p style="margin-top: 0px; margin-bottom: 1rem;"
+    >{{post.excerpt | strip_html}}</p>
+    <!-- date to the left -->
   {% endfor %}
 </div>
 
@@ -35,3 +42,10 @@ layout: default
   {% endif %}
 </div>
 {% endif %}
+
+
+<!-- Link to archive -->
+
+<div class="pagination">
+  <a href="{{site.baseurl}}/archive/">Archive</a>
+</div>
