@@ -30,7 +30,7 @@ h1,h2,h3,h4,h5,h6 {
 
 a {
   color: $brand-color;
-  text-decoration: none;
+  // text-decoration: none;
   &:hover{
     color: $text-color;
 
@@ -44,23 +44,22 @@ a {
 
 
 p a {
-  color: $text-color;
-  text-decoration: none;
-  background: -webkit-linear-gradient(transparent 90%, lighten($brand-color, 10%) 10%);
-  background: -moz-linear-gradient(transparent 90%, lighten($brand-color, 10%) 10%);
-  background: linear-gradient(transparent 90%, lighten($brand-color, 10%) 10%);
+  color: $brand-color;
+  background: -webkit-linear-gradient(transparent 90%, lighten($brand-color, 0%) 10%);
+  background: -moz-linear-gradient(transparent 90%, lighten($brand-color, 0%) 10%);
+  background: linear-gradient(transparent 90%, lighten($brand-color, 0%) 10%);
 
-  -webkit-box-shadow: inset 0 0 0 0 lighten($brand-color, 10%);
-  box-shadow: inset 0 0 0 0 lighten($brand-color, 10%);
+  -webkit-box-shadow: inset 0 0 0 0 lighten($brand-color, 0%);
+  box-shadow: inset 0 0 0 0 lighten($brand-color, 0%);
 
 
-  -webkit-transition: box-shadow ease 1s;
-  -moz-transition: box-shadow ease 1s;
-  transition: box-shadow ease 1s;
+  -webkit-transition: ease 1s;
+  -moz-transition: ease 1s;
+  transition: ease 1s;
   &:hover {
     color: lighten($background-color, 0%);
-    -webkit-box-shadow: inset 0 -100px 0 0 lighten($brand-color, 10%);
-    box-shadow: inset 0 -100px 0 0 lighten($brand-color, 10%);
+    -webkit-box-shadow: inset 0 -100px 0 0 lighten($brand-color, 0%);
+    box-shadow: inset 0 -100px 0 0 lighten($brand-color, 0%);
 
   }
 
@@ -115,28 +114,6 @@ blockquote {
   }
 }
 
-/* Pagination style in index/home page */
-.pagination {
-  margin: 2em 0;
-  text-align: center;
-
-  a {
-    &:hover {
-      background-color: transparent;
-      // color: #333;
-    }
-  }
-
-  a, span {
-    padding: 7px 18px;
-    border: 1px solid #eee;
-    margin-left: -4px;
-    margin-right: -4px;
-    background-color: transparent;
-    display: inline-block;
-  }
-}
-
 
 /* Add video class for iframes to make them responsive */
 .video {
@@ -184,7 +161,7 @@ blockquote {
   border-radius: 8px;
   padding: 13px 23px;
   border: 1px solid #222222;
-  transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
+  transition: 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
   background: #fff;
   color: #222222;
   :hover {
@@ -210,17 +187,79 @@ em {
   color: $brand-color;
 }
 
-h2, h2 a, p a {
+a {
+  // font-weight: bold;
   color: $highlight-color;
+  text-decoration: none;
+  
+  &:hover {
+    color: $text-color;
+    }
+
+    
+
+  -webkit-box-shadow: inset 0 0 0 0 lighten($brand-color, 0%);
+  box-shadow: inset 0 0 0 0 lighten($brand-color, 0%);
+  border-radius: 1px;
+
+
+  -webkit-transition: ease 1s;
+  -moz-transition: ease 1s;
+  transition: ease 1s;
+  &:hover {
+    color: lighten($background-color, 0%);
+    -webkit-box-shadow: inset 0 -100px 0 0 lighten($brand-color, 0%);
+    box-shadow: inset 0 -100px 0 0 lighten($brand-color, 0%);
+    border-radius: 1px;
+
+  }
+
 }
 
-.links.scroll a {
+.links a {
+  text-decoration: none !important;
   font-weight: bold;
-  color: $highlight-color;
 }
 
 hr {
   margin: 1em 0;
   border: 0;
   border-top: 3px dotted $highlight-color
+}
+
+
+
+h2, h2 a {
+  color: $highlight-color;
+  transition: none;
+  box-shadow: none;
+  &:hover {
+    color: $text-color;
+    box-shadow: none;
+  }
+}
+
+/* Pagination style in index/home page */
+.pagination {
+  margin: 2em 0;
+  text-align: center;
+
+  a {
+    box-shadow: none;
+    transition: none;
+    &:hover {
+      background-color: transparent;
+      color: $text-color;
+      box-shadow: none; 
+    }
+  }
+
+  a, span {
+    padding: 7px 18px;
+    border: 1px solid #eee;
+    margin-left: -4px;
+    margin-right: -4px;
+    background-color: transparent;
+    display: inline-block;
+  }
 }
