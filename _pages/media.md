@@ -6,39 +6,24 @@ published: true
 order: 2
 ---
 
-<div class="ProjectContainer">
+{% assign media = site.pages | where: "category", "media-consumption" %}
+{% for project in media %}
 
-	<div class="gallery">
+{% if project.redirect %}
+<a href="{{ project.redirect }}" target="_blank"  style="font-size: 1.5em;">
+    {{ project.title }}
+</a>
 
-  {% assign media = site.pages | where: "category", "media-consumption" %}
+{{ project.description }}
 
-  {% for project in media %}
+{% else %}
 
-  {% if project.redirect %}
-  <p class="projectTile">
-          <a href="{{ project.redirect }}" target="_blank">
-              <span style="font-size: 1.5em;">
-              {{ project.title }}
-              </span>
-              {{ project.description }}
-          </a>
-  </p>
+<a href="{{ project.url | prepend: site.baseurl | prepend: site.url }}" style="font-size: 1.5em;">
+    {{ project.title }}
+</a>
 
-  {% else %}
+{{ project.description }}
 
-  <p class="projectTile">
-          <a href="{{ project.url | prepend: site.baseurl | prepend: site.url }}">
-              <span style="font-size: 1.5em;">
-              {{ project.title }}
-              </span>
-              {{ project.description }}
-          </a>
-  </p>
+{% endif %}
 
-  {% endif %}
-
-  {% endfor %}
-
-	</div>
-
-</div>
+{% endfor %}

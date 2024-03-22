@@ -33,6 +33,7 @@
   text-align: center;
   cursor: pointer;
   color: $text-color;
+  text-decoration: none !important;
 
   background: -webkit-linear-gradient(transparent 90%, $text-color 10%);
   background: -moz-linear-gradient(transparent 90%, $text-color 10%);
@@ -40,8 +41,12 @@
 
   -webkit-box-shadow: inset 0 0 0 0 $text-color;
   box-shadow: inset 0 0 0 0 $text-color;
+  -webkit-transition: ease 1s;
+  -moz-transition: ease 1s;
+  transition: ease 1s;
 
   &:hover {
+        color: lighten($background-color, 0%);
     -webkit-box-shadow: inset 0 -100px 0 0 $text-color;
     box-shadow: inset 0 -100px 0 0 $text-color;
   }

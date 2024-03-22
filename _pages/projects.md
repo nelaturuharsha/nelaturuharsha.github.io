@@ -6,39 +6,24 @@ published: true
 order: 1
 ---
 
-<div class="ProjectContainer">
+{% assign projects = site.pages | where: "category", "project" %}
+{% for project in projects %}
 
-	<div class="gallery">
+{% if project.redirect %}
+<a href="{{ project.redirect }}" target="_blank"  style="font-size: 1.5em;">
+    {{ project.title }}
+</a>
 
-  {% assign projects = site.pages | where: "category", "project" %}
+{{ project.description }}
 
-  {% for project in projects %}
+{% else %}
 
-  {% if project.redirect %}
-  <p class="projectTile">
-          <a href="{{ project.redirect }}" target="_blank">
-              <span style="font-size: 1.5em;">
-              {{ project.title }}
-              </span>
-              {{ project.description }}
-          </a>
-  </p>
+<a href="{{ project.url | prepend: site.baseurl | prepend: site.url }}" style="font-size: 1.5em;">
+    {{ project.title }}
+</a>
 
-  {% else %}
+{{ project.description }}
 
-  <p class="projectTile">
-          <a href="{{ project.url | prepend: site.baseurl | prepend: site.url }}">
-              <span style="font-size: 1.5em;">
-              {{ project.title }}
-              </span>
-              {{ project.description }}
-          </a>
-  </p>
+{% endif %}
 
-  {% endif %}
-
-  {% endfor %}
-
-	</div>
-
-</div>
+{% endfor %}
