@@ -13,7 +13,7 @@ order: 1
 
 Hi, I’m Harsha :) a Graduate student at Universitat Des Saarlandes in Visual Computing. I study math and systems that aim to understand perception, learning and creativity.
 
-My current research interests lie at the intersection of *data and compute efficient deep learning*.
+My current research interests lie at the intersection of *data and compute efficient deep learning*, with a focus on sparsity and transformers (LLM and Multi-modal).
 
 Questions my research seeks to answer:
 
@@ -24,3 +24,5 @@ Questions my research seeks to answer:
 * What mysteries does *over-parameterization* hold? Prune, quantize, low-rank but things often work out – but *why*?
 
 Take a look at my [projects]({{ site.baseurl }}/projects) to see how I've brought these ideas to life. 
+
+(This website is a work in progress, credits: Celia for building it)
