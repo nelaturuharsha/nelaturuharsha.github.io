@@ -7,11 +7,11 @@ order: 3
 ---
 
 ## Publications
-
+<p>
 {% for publication in site.data.publications %}
-{% if publication.authors %}
-<p>{{ publication.authors | join: ', ' }}.
-{% endif %}
+{% for author in publication.authors %}{% 
+if author == site.title %}<b>{{ author }}</b>{% else %}{{ author }}{% endif %}{% 
+if forloop.last == false %}, {% endif %}{% endfor %}.
 {% if publication.url %}
 <em><a href="{{ publication.url }}">{{ publication.title }}</a></em>{% 
 else %}
