@@ -6,41 +6,20 @@ published: true
 order: 3
 ---
 
-## Projects
----
+## Publications
 
-{% for project in site.data.projects %}
-{% if project.url %}
-
-#### [{{ project.title }}]({{ project.url }})
-
-{% else %}
-#### {{ project.title }}
+{% for publication in site.data.publications %}
+{% if publication.authors %}
+<p>{{ publication.authors | join: ', ' }}.
 {% endif %}
-
-* {{ project.description }}
-
-{% if project.code %}
-
-* Code: [{{ project.code }}]({{ project.code }})
-
+{% if publication.url %}
+<em><a href="{{ publication.url }}">{{ publication.title }}</a></em>{% 
+else %}
+<em>{{ publication.title }}</em>{% 
+endif %}{%
+if publication.year %}, {{ publication.year }}{% endif %}.
+{% if publication.description %}
+{{ publication.description }}.
 {% endif %}
-
----
-{% endfor %}
-
----
-## Talks
----
-
-{% for talk in site.data.talks %}
-{% if talk.url %}
-
-* [{{ talk.title }}]({{ talk.url }})
-
-{% else %}
-
-* {{ talk.title }}
-
-{% endif %}
+<hr>
 {% endfor %}
