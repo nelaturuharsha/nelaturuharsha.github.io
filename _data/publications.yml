@@ -1,0 +1,15 @@
+- title: On The Fairness Impacts of Hardware Selection in Machine Learning
+  authors: Sree Harsha Nelaturu, Nishaanth Kanna Ravichandran, Cuong Tran, Sara Hooker, Ferdinando Fioretto
+  description: Preprint (Under Review)
+  url: https://arxiv.org/abs/2312.03886
+  year: 2024
+
+- title: End-to-End Learnable Masks With Differentiable Indexing
+  authors: Dibyanshu Shekhar, Sree Harsha Nelaturu, Ashwath Shetty, Ilia Sucholutsky
+  description: Accepted for archival in Tiny Papers @ ICLR2023
+  url: https://openreview.net/pdf?id=EyliiBqhFz 
+
+- title: Accelerated CNN Training through Gradient Approximation
+  description: Presented at the Energy Efficient Machine Learning and Cognitive Computing (EMC^2) Workshop at the International Symposium on Computer Architecture (ISCA 2019)
+  authors: Ziheng Wang, Sree Harsha Nelaturu, Saman Amarsinghe
+  url: https://www.emc2-ai.org/assets/docs/isca-19/emc2-isca19-paper3.pdf

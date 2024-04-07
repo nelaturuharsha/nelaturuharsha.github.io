@@ -1,9 +1,9 @@
 ---
-title: Projects
+title: Publications
 layout: default
-permalink: /projects/
+permalink: /publications/
 published: true
-order: 2
+order: 3
 ---
 
 ## Projects

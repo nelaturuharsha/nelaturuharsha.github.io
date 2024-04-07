@@ -1,0 +1,21 @@
+books:
+  - title: Gone with the wind
+    author: Margaret Mitchell
+  - title: Meditations
+    author: Marcus Aurelius
+  - title: Jane Austen Mysteries
+    author: Stephanie Barron
+
+music:
+  albums:
+    - title: Mahal (EP)
+      artist: Glass Beams
+    - title: Dark Before Dawn
+      artist: Breaking Benjamin
+    - title: Modal Soul
+      artist: Nujabes
+  songs:
+    - title: Alors on Danse
+      artist: Stromae
+    - title: 8th Commandment
+      artist: Sonata Arctica

@@ -3,27 +3,37 @@ title: Media Consumption
 layout: default
 permalink: /media-consumption/
 published: true
-order: 2
+order: 5
 ---
 
-{% assign media = site.pages | where: "category", "media-consumption" %}
-{% for project in media %}
+{% assign media = site.data.media %}
 
-{% if project.redirect %}
-<a href="{{ project.redirect }}" target="_blank"  style="font-size: 1.5em;">
-    {{ project.title }}
-</a>
+## Books (Currently Reading)
 
-{{ project.description }}
+{% for book in media.books %}
 
-{% else %}
+- *{{ book.title }}* by {{ book.author }}
 
-<a href="{{ project.url | prepend: site.baseurl | prepend: site.url }}" style="font-size: 1.5em;">
-    {{ project.title }}
-</a>
+{% endfor %}
 
-{{ project.description }}
+---
 
-{% endif %}
+## Music Recommendations
+
+---
+
+### Albums
+
+{% for album in media.music.albums %}
+
+- *{{ album.title }}* by {{ album.artist }}
+
+{% endfor %}
+
+### Songs
+
+{% for song in media.music.songs %}
+
+- *{{ song.title }}* by {{ song.artist }}
 
 {% endfor %}

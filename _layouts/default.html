@@ -14,8 +14,10 @@
         {% if page.profile.image %}
         <img class="profile {{ page.profile.align }}"  width="20%" src="{{ page.profile.image | prepend: '/assets/images/' | relative_url }}">
         {% endif %}
-        <h1 class="post-headline">{{site.title}}</h1>
-        <p class="post-description">{{site.description}}</p>
+        <div class="post-head">
+            <h1 class="post-headline">{{ site.title }}</h1>
+            <p class="post-description">{{ site.description }}</p>
+        </div>
 
         {% include navigation.html %}
 

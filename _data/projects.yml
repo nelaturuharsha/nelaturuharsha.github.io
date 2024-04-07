@@ -1,0 +1,18 @@
+- title: Psych.ai
+  description:  Combining art+deep learning to enable media enhancement of entertainment content. First place winner at Microsoft GAINS AI Hackathon (2017)
+  code: https://github.com/SreeHarshaNelaturu/Psych.ai
+- title: Endangered Tales
+  description: Automatic Comic generation for spreading awareness about climate change/sustainability. Best use of OpenAI API at Stanford Treehacks (2021)
+  url: https://devpost.com/software/endangered-tales
+- title: StoryBoxVR
+  description: Party game using VR and language modelling.
+- title: "Efficient Federated Learning"
+  description: Ongoing investigation into fair + sparse federated learning
+- title: "Lips sometimes lie: Towards undestanding lip reading networks"
+  description: Class project for class on High Level Computer Vision, exploring the limitations of AV-HuBERT for lip-reading tasks.
+- title: "Study of effect of Optimizers on Accelerated Backpropgation Techniques"
+  description: Investigation of optimizers on networks trained with approximate and sparse operations for a class on Optimization for Machine Learning.
+  url: 
+- title: "Deep Greetings"
+  description: Using LSTMs and Neural Style Transfer for generating greeting cards.
+  code: https://github.com/SreeHarshaNelaturu/Deep-Greetings

@@ -19,15 +19,15 @@
   font-weight: normal;
   line-height: 1.5em;
   border-radius: 1.6875rem;
-  transition: all 0.5s ease;
+  // transition: all 0.5s ease;
   margin-right: 0.25rem;
   margin-bottom: 0.25rem;
 }
 
 .rounded-social-buttons .social-button:hover, .rounded-social-buttons .social-button:focus {
-  -webkit-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
-          transform: rotate(360deg);
+  // -webkit-transform: rotate(360deg);
+  //     -ms-transform: rotate(360deg);
+  //         transform: rotate(360deg);
   color: $text-color;
 }
 

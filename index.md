@@ -1,10 +1,12 @@
 ---
+title: Home
 layout: default
 permalink: /
 profile:
   align: right
   image: profile.png
 published: true
+order: 1
 ---
 
 ## About Me
