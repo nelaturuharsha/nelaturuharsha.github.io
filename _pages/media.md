@@ -1,5 +1,5 @@
 ---
-title: Media Consumption
+title: Media
 layout: default
 permalink: /media-consumption/
 published: true
