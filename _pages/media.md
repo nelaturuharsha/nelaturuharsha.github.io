@@ -1,9 +1,12 @@
 ---
-title: Media Consumption
+title: Media
 layout: default
-permalink: /media-consumption/
+permalink: /media/
 published: true
 order: 5
+profile:
+  align: right
+  image: profile.png
 ---
 
 {% assign media = site.data.media %}
@@ -12,7 +15,10 @@ order: 5
 
 {% for book in media.books %}
 
-- *{{ book.title }}* by {{ book.author }}
+<div style="display: flex; align-items: center;">
+  <img src="{{ site.baseurl }}/assets/images/media/{{ book.image }}" alt="{{ book.title }}" style="width: 60px; height: 60px; margin-right: 10px;">
+  <p><i>{{ book.title }}</i> by {{ book.author }}</p>
+</div>
 
 {% endfor %}
 
@@ -26,7 +32,10 @@ order: 5
 
 {% for album in media.music.albums %}
 
-- *{{ album.title }}* by {{ album.artist }}
+<div style="display: flex; align-items: center;">
+  <img src="{{ site.baseurl }}/assets/images/media/{{ album.image }}" alt="{{ album.title }}" style="width: 60px; height: 60px; margin-right: 10px;">
+  <p><i>{{ album.title }}</i> by {{ album.artist }}</p>
+</div>
 
 {% endfor %}
 
@@ -34,6 +43,24 @@ order: 5
 
 {% for song in media.music.songs %}
 
-- *{{ song.title }}* by {{ song.artist }}
+<div style="display: flex; align-items: center;">
+  <img src="{{ site.baseurl }}/assets/images/media/{{ song.image }}" alt="{{ song.title }}" style="width: 60px; height: 60px; margin-right: 10px;">
+  <p><i>{{ song.title }}</i> by {{ song.artist }}</p>
+</div>
+
+{% endfor %}
+
+---
+
+## Movies
+
+---
+
+{% for movie in media.movies %}
+
+<div style="display: flex; align-items: center;">
+  <img src="{{ site.baseurl }}/assets/images/media/{{ movie.image }}" alt="{{ movie.title }}" style="width: 60px; height: 60px; margin-right: 10px;">
+  <p><i>{{ movie.title }}</i>, {{ movie.year }}</p>
+</div>
 
 {% endfor %}

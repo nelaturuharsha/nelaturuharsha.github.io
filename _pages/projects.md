@@ -4,6 +4,9 @@ layout: default
 permalink: /projects/
 published: true
 order: 2
+profile:
+  align: right
+  image: profile.png
 ---
 
 ## Projects

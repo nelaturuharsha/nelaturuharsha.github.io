@@ -4,22 +4,30 @@ $base-font-weight: 300;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.6;
 
+
+$orange: #fe7f2d;
+$green: #63BB98;
+$yellow: #FFD64D;
+$pink: #d666c2;
+$indigo: #9ba1ff;
+
+
 $spacing-unit:     50px;
 $light-gray: #555;
-$text-color:       rgb(0, 220, 220);
-$background-color: #222;
+$text-color:       #E5F4F9;
+$background-color: #23314D;
 // $brand-color:      #07c;
 $projectbox-text:  #1e2126;
-$highlight-color:  rgb(220, 220, 0);
+$highlight-color:  #FFD64D;
 $brand-color:      $highlight-color;
-$title-color:      rgb(0, 220, 0);
+$title-color:      $text-color;
 
 // Color scheme for light
-$body-bg: #222;
+$body-bg: #23314D;
 $projectbox: #23272d;
-$text-color: #0ff;
+$text-color: #E5F4F9;
 
 // Color scheme for dark modes
-$body-bg-dark: #222;
+$body-bg-dark: #23314D;
 $projectbox-dark: lighten(#98a0ac, 2%);
-$text-color-dark: #0ff;
+$text-color-dark: #E5F4F9;

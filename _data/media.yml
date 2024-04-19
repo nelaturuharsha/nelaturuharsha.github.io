@@ -1,6 +1,7 @@
 books:
   - title: Gone with the wind
     author: Margaret Mitchell
+    image: gone-with-the-wind.png
   - title: Meditations
     author: Marcus Aurelius
   - title: Jane Austen Mysteries
@@ -19,3 +20,7 @@ music:
       artist: Stromae
     - title: 8th Commandment
       artist: Sonata Arctica
+
+movies:
+  - title: The Shawshank Redemption
+    year: 1994

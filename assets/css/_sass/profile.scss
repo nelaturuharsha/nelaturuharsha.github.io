@@ -2,12 +2,12 @@
 .profile {
     // border: none;
     border: 2px solid $text-color;
-    margin-top: 3px;
+    margin-top: 1rem;
     margin-left: 1rem;
-    margin-right: 1rem;
+    margin-right: 3rem;
     margin-bottom: 1rem;
     border-radius: 50%;
-    width: 25%;
+    width: 20%;
 }
 
 .left {
@@ -23,8 +23,8 @@
   @media screen and (max-width: $on-phone){
 
     .profile {
-      width: 30%;
+      width: 40%;
+      margin-bottom: 0rem;
     }
-
   }
 }
