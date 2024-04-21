@@ -147,12 +147,28 @@ blockquote {
   border: 2px solid $highlight-color;
   border-radius: 5px;
   padding: 0.5em;
-  display: inline-block;
+  display: flex;
+  // justify-content: space-between;
+  gap: 2em; /* Adjust as needed */
+  overflow: scroll;    
 
 }
 
 .scroll::-webkit-scrollbar {
-  display: none; }
+  display: none;
+}
+
+// adjust tile sizes on smaller screens
+@include media-query($on-phone) {
+  @media screen and (max-width: $on-phone){
+
+    .scroll {
+      // width: min-content;
+      gap: 0.5rem;
+    }
+  }
+}
+
 
 
 /* Button */
