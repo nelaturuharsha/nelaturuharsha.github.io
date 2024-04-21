@@ -46,14 +46,17 @@ border: none;
 ## Talks
 ---
 
+<ul>
 {% for talk in site.data.talks %}
-{% if talk.url %}
 
-* [{{ talk.title }}]({{ talk.url }})
+<li><div style="display: flex; gap: 10px; margin-block-start: 2em; margin-block-end: 2em; align-items: center;
+">
+{% if talk.url %}<a href="{{ talk.url }}">{{ talk.title }}</a>{% else %}{{ talk.title }}{% endif %}
+  {% if talk.slides %}<a href="{{ talk.slides }}" target="_blank" class="button">Slides</a>{% endif %}
+  {% if talk.video %}<a href="{{ talk.video }}" target="_blank" class="button">Video</a>{% endif %}
+  {% if talk.code %}<a href="{{ talk.code }}" target="_blank" class="button">Code</a>{% endif %}
+</div>
+</li>
 
-{% else %}
-
-* {{ talk.title }}
-
-{% endif %}
 {% endfor %}
+</ul>
