@@ -187,7 +187,7 @@ blockquote {
   
   border: 2px solid $text-color;
   border-radius: 5px;
-  padding: 0.5em;
+  padding: 1em;
   margin-bottom: 1rem;
 }
 
@@ -305,6 +305,11 @@ h2 a, .links a {
   }
 
   td b {
-    color: $highlight-color;
+    // color: $highlight-color;
   }
+}
+
+em {
+  font-style: normal;
+  color: $highlight-color;
 }

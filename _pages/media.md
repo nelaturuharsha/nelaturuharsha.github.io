@@ -22,13 +22,15 @@ profile:
 
 {% endfor %}
 
----
+<br>
 
 ## Music Recommendations
 
 ---
 
 ### Albums
+
+---
 
 {% for album in media.music.albums %}
 
@@ -41,16 +43,14 @@ profile:
 
 ### Songs
 
+---
+
 {% for song in media.music.songs %}
 
 <div style="display: flex; align-items: center;">
   <img src="{{ site.baseurl }}/assets/images/media/{{ song.image }}" alt="{{ song.title }}" style="width: 60px; height: 60px; margin-right: 10px;">
-  <p><i>{{ song.title }}</i> by {{ song.artist }}</p>
-</div>
-
-{% endfor %}
-
----
+  <p><i>{{ song.title }}</i> by {{ song.artist }}</p></div>{% endfor %}
+<br>
 
 ## Movies
 

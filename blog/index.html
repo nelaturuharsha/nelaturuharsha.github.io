@@ -8,9 +8,11 @@ profile:
 
 <h2>Blog</h2>
 
+<br>
+
 <div class="article-list">
   {% for post in paginator.posts %}
-    <h3 style="margin-bottom: -1.5rem; width: 75%;"
+    <h3 style="margin-bottom: -1.5rem; width: 75%; font-weight: normal;"
     ><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h3>
     <p style="text-align: right; color: #999; margin-top: -1.5rem;"
     "><small>{{ post.date | date: "%b %-d, %Y" }}</small></p>

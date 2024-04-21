@@ -10,29 +10,39 @@ profile:
 ---
 
 ## Projects
+
 ---
+
+
+<div id="newstable" style="
+/* padding-left: 0.7em; padding-right: 0.7em; padding-top: 0.7em; padding-bottom: 0.7em; */
+border: none;
+">
+<table style="width:100%">
+
+<col width="23%">
+<col width="2%">
+<col width="75%">
+
 
 {% for project in site.data.projects %}
-{% if project.url %}
 
-#### [{{ project.title }}]({{ project.url }})
-
+<tr><td><em>{% if project.url %}
+<a href="{{ project.url }}">{{ project.title }}</a>
 {% else %}
-#### {{ project.title }}
-{% endif %}
+{{ project.title }}
+{% endif %}</em></td>
+<td></td>
+<td>{{ project.description }}</td></tr>
+{%- if forloop.last == false -%}
+<tr><td colspan="3"><hr></td></tr>
+{%- endif -%}
+{%- endfor -%}
+</table>
+</div>
 
-* {{ project.description }}
+<br>
 
-{% if project.code %}
-
-* Code: [{{ project.code }}]({{ project.code }})
-
-{% endif %}
-
----
-{% endfor %}
-
----
 ## Talks
 ---
 
