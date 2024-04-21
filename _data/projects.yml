@@ -1,6 +1,6 @@
 - title: Psych.ai
   description:  Combining art+deep learning to enable media enhancement of entertainment content. First place winner at Microsoft GAINS AI Hackathon (2017)
-  code: https://github.com/SreeHarshaNelaturu/Psych.ai
+  url: https://github.com/SreeHarshaNelaturu/Psych.ai
 - title: Endangered Tales
   description: Automatic Comic generation for spreading awareness about climate change/sustainability. Best use of OpenAI API at Stanford Treehacks (2021)
   url: https://devpost.com/software/endangered-tales
@@ -15,4 +15,4 @@
   url: 
 - title: "Deep Greetings"
   description: Using LSTMs and Neural Style Transfer for generating greeting cards.
-  code: https://github.com/SreeHarshaNelaturu/Deep-Greetings
+  url: https://github.com/SreeHarshaNelaturu/Deep-Greetings

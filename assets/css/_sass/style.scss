@@ -147,12 +147,28 @@ blockquote {
   border: 2px solid $highlight-color;
   border-radius: 5px;
   padding: 0.5em;
-  display: inline-block;
+  display: flex;
+  // justify-content: space-between;
+  gap: 2em; /* Adjust as needed */
+  overflow: scroll;    
 
 }
 
 .scroll::-webkit-scrollbar {
-  display: none; }
+  display: none;
+}
+
+// adjust tile sizes on smaller screens
+@include media-query($on-phone) {
+  @media screen and (max-width: $on-phone){
+
+    .scroll {
+      // width: min-content;
+      gap: 0.5rem;
+    }
+  }
+}
+
 
 
 /* Button */
@@ -187,7 +203,7 @@ blockquote {
   
   border: 2px solid $text-color;
   border-radius: 5px;
-  padding: 0.5em;
+  padding: 1em;
   margin-bottom: 1rem;
 }
 
@@ -305,6 +321,36 @@ h2 a, .links a {
   }
 
   td b {
-    color: $highlight-color;
+    // color: $highlight-color;
   }
+}
+
+em {
+  font-style: normal;
+  color: $highlight-color;
+}
+
+.button {
+  // display: inline-block;
+  padding: 0.5em;
+  font-size: 0.8em;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: $text-color; // Use the same text color as the rest of your site
+  // background-color: $highlight-color; // Use a primary color from your site's color scheme
+  border: 2px solid $text-color;
+  border-radius: 5px; // Use the same border radius as other elements on your site
+  // box-shadow: 0 2px darken($text-color, 20%);
+}
+
+.button:hover {
+  background-color: $text-color;
+  color: $background-color;
+}
+
+.button:active {
+  box-shadow: none;
+  transform: translateY(2px);
 }
