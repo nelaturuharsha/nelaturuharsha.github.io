@@ -6,13 +6,16 @@
   url: https://devpost.com/software/endangered-tales
 - title: StoryBoxVR
   description: Party game using VR and language modelling.
-- title: "Efficient Federated Learning"
-  description: Ongoing investigation into fair + sparse federated learning
+  url: https://github.com/nelaturuharsha/StoryBox
+- title: "Fair + EfficiencyFederated Learning"
+  description: Gradient based learning leveraging sparsity is desirable in and has found success in centralized paradigms as well as in federated learning.
+               A key challenge beyond the communication bottleneck in FL is device fairness, in algorithms like FedAvg [esp in non-IID settings] there is significant variance in performance.
+                Our projects aims to leverage sparsity to address this.
 - title: "Lips sometimes lie: Towards undestanding lip reading networks"
   description: Class project for class on High Level Computer Vision, exploring the limitations of AV-HuBERT for lip-reading tasks.
 - title: "Study of effect of Optimizers on Accelerated Backpropgation Techniques"
   description: Investigation of optimizers on networks trained with approximate and sparse operations for a class on Optimization for Machine Learning.
-  url: 
+  url: https://github.com/nelaturuharsha/OptimML_Project
 - title: "Deep Greetings"
   description: Using LSTMs and Neural Style Transfer for generating greeting cards.
   url: https://github.com/SreeHarshaNelaturu/Deep-Greetings
