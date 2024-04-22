@@ -1,6 +1,5 @@
 - title: "Artistic Expression in AI, SRM University"
-  url:
-  slides: https://docs.google.com/presentation/d/1Q6J9
+  slides: https://docs.google.com/presentation/d/16RxUO-dK63VkJFC5ElNWmnmo3zzqcO2wPvOI_FMOb4U/edit?usp=sharing
 - title: Open Source in AI, Sahajsoft
   url:
 - title: Automatic Mixed Precision (AMP) as a source of stochasticity
@@ -13,3 +12,5 @@
   url:
 - title: Lottery Ticket Hypothesis (ML Theory Group)
   url:
+- title: Presentation on Synthetic Petri Dish
+  slides: https://docs.google.com/presentation/d/1B3QLIcs33bNsWToG32GXfGSjx48BD8QckYIjk9d3Isk/edit?usp=sharing

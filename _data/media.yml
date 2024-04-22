@@ -4,23 +4,34 @@ books:
     image: gone-with-the-wind.png
   - title: Meditations
     author: Marcus Aurelius
+    image: meditations.png
   - title: Jane Austen Mysteries
     author: Stephanie Barron
+    image: jane-austen-mysteries.png
+  - title: Memoirs of a Polar Bear
+    author: Yoko Tawada
+    image: memoirs-of-a-polar-bear.jpg
 
 music:
   albums:
     - title: Mahal (EP)
       artist: Glass Beams
+      image: mahal-(ep).png
     - title: Dark Before Dawn
       artist: Breaking Benjamin
+      image: dark-before-dawn.png
     - title: Modal Soul
       artist: Nujabes
+      image: modal-soul.png
   songs:
     - title: Alors on Danse
       artist: Stromae
+      image: alors-on-danse.jpeg
     - title: 8th Commandment
       artist: Sonata Arctica
+      image: ecliptica.jpeg
 
 movies:
-  - title: The Shawshank Redemption
-    year: 1994
+  - title: (Tillu)^2 
+    year: 2024
+    image: tillu-squared.jpeg
