@@ -2,7 +2,7 @@
   content: "<a href='https://github.com/deep-learning-indaba/indaba-pracs-2024/blob/main/practicals/Federated_Learning/Federated_Learning.ipynb'>Practical on Federated Learning</a>, presented at Deep Learning Indaba (Dakar, Senegal). Joint work with Andrej Jovanovic and Luca Powell."
 
 - date: "August 2024"
-  content: "|
+  content: "
     <ul>
       <li>Will be starting as an Applied Scientist Intern at the AIRE Team at AWS Tübingen in November. Will be working on LLM inference optimization.</li>
       <li>Started as a Research Assistant (HiWi) at D2, CVML at the Max Planck Institute for Informatics (MPI-INF), advised by Dr. Jonas Fischer, working on Mechanistic Interpretability of fMRI + Vision models.</li>
