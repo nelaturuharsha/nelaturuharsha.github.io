@@ -1,11 +1,12 @@
-- date: September 2024
+- date: "September 2024"
   content: "<a href='https://github.com/deep-learning-indaba/indaba-pracs-2024/blob/main/practicals/Federated_Learning/Federated_Learning.ipynb'>Practical on Federated Learning</a>, presented at Deep Learning Indaba (Dakar, Senegal). Joint work with Andrej Jovanovic and Luca Powell."
 
-- date: August 2024
-  content: "Will be starting as an Applied Scientist Intern at the AIRE Team at AWS Tübingen from November. Will be working on LLM inference optimization."
-
-- date: August 2024 (Second):
-  content: "Started as a Research Assistant (HiWi) at D2, CVML at the Max Planck Institut for Informatik (MPI-INF) advised by Dr. Jonas Fischer on Mechanistic Interpretability of f-MRI + Vision models."
+- date: "August 2024"
+  content: "|
+    <ul>
+      <li>Will be starting as an Applied Scientist Intern at the AIRE Team at AWS Tübingen in November. Will be working on LLM inference optimization.</li>
+      <li>Started as a Research Assistant (HiWi) at D2, CVML at the Max Planck Institute for Informatics (MPI-INF), advised by Dr. Jonas Fischer, working on Mechanistic Interpretability of fMRI + Vision models.</li>
+    </ul>"
 
 - date: June 2024
   content: "Pre-print: <a href='https://arxiv.org/abs/2406.02773'> Cyclic Sparse Training: is it enough?</a> joint work led by Advait Gadhikar and advised by Dr. Rebekka Burkholz is now out! :D"
