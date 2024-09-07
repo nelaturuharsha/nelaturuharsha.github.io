@@ -1,5 +1,12 @@
+- date: September 2024
+  content: "Practical on <a href=https://github.com/deep-learning-indaba/indaba-pracs-2024/blob/main/practicals/Federated_Learning/Federated_Learning.ipynb> Federated Learning </a> presented at Deep Learning Indaba (Dakar, Senegal) joint work with Andrej Jovanovic and Luca Powell."
+
+- date: August 2024
+  content: "Will be starting as an Applied Scientist Intern at the AIRE Team at AWS Tübingen. Will be working on LLM inference optimization."
+
 - date: June 2024
   content: "Pre-print: <a href='https://arxiv.org/abs/2406.02773'> Cyclic Sparse Training: is it enough?</a> joint work led by Advait Gadhikar and advised by Dr. Rebekka Burkholz is now out! :D"
+  
 - date: May 2024
   content: "<a href='https://arxiv.org/abs/2312.03886'>On The Fairness Impacts of Hardware Selection in Machine Learning</a> - joint work in collaboration between Cohere For AI + RAISE Lab (University of Virginia) accepted as a poster at ICML 2024 :)"
   
