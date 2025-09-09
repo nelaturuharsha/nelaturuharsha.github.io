@@ -1,6 +1,9 @@
-- date: "September 2024"
+- date: May 2025
+  content: "Completed my internship at AWS succesfully completing a project on Disaggregated inference and quantization."
+- date: November 2024
+  content: "Started as Applied Scientist Intern at the Scale org at AWS Tübingen with Jonas Kübler. I will be working on distributed LLM inference optimization using quantization."
+- date: September 2024
   content: "<a href='https://github.com/deep-learning-indaba/indaba-pracs-2024/blob/main/practicals/Federated_Learning/Federated_Learning.ipynb'>Practical on Federated Learning</a>, presented at Deep Learning Indaba (Dakar, Senegal). Joint work with Andrej Jovanovic and Luca Powell."
-
 - date: "August 2024"
   content: "
     <ul>
