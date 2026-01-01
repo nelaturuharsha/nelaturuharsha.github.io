@@ -1,62 +1,96 @@
 ---
 title: Projects
-layout: default
+layout: page
 permalink: /projects/
-published: true
-order: 2
-profile:
-  align: right
-  image: profile.png
+description: Selected projects and talks
 ---
 
 ## Projects
 
----
-
-
-<div id="newstable" style="
-/* padding-left: 0.7em; padding-right: 0.7em; padding-top: 0.7em; padding-bottom: 0.7em; */
-border: none;
-">
-<table style="width:100%">
-
-<col width="23%">
-<col width="2%">
-<col width="75%">
-
-
+<div class="grid grid-auto">
 {% for project in site.data.projects %}
-
-<tr><td><em>{% if project.url %}
-<a href="{{ project.url }}">{{ project.title }}</a>
-{% else %}
-{{ project.title }}
-{% endif %}</em></td>
-<td></td>
-<td>{{ project.description }}</td></tr>
-{%- if forloop.last == false -%}
-<tr><td colspan="3"><hr></td></tr>
-{%- endif -%}
-{%- endfor -%}
-</table>
+<div class="card card-interactive">
+  <div class="card-header">
+    <h3 class="card-title">
+      {% if project.url %}
+      <a href="{{ project.url }}" target="_blank" rel="noopener">{{ project.title }}</a>
+      {% else %}
+      {{ project.title }}
+      {% endif %}
+    </h3>
+  </div>
+  <div class="card-body">
+    <p>{{ project.description }}</p>
+  </div>
+  {% if project.url %}
+  <div class="card-footer">
+    <a href="{{ project.url }}" class="btn btn-sm btn-secondary" target="_blank" rel="noopener">
+      View Project &rarr;
+    </a>
+  </div>
+  {% endif %}
+</div>
+{% endfor %}
 </div>
 
-<br>
+---
 
 ## Talks
----
 
-<ul>
+<div class="talks-list">
 {% for talk in site.data.talks %}
-
-<li><div style="display: flex; gap: 10px; margin-block-start: 2em; margin-block-end: 2em; align-items: center;
-">
-{% if talk.url %}<a href="{{ talk.url }}">{{ talk.title }}</a>{% else %}{{ talk.title }}{% endif %}
-  {% if talk.slides %}<a href="{{ talk.slides }}" target="_blank" class="button">Slides</a>{% endif %}
-  {% if talk.video %}<a href="{{ talk.video }}" target="_blank" class="button">Video</a>{% endif %}
-  {% if talk.code %}<a href="{{ talk.code }}" target="_blank" class="button">Code</a>{% endif %}
+<div class="talk-item">
+  <h4 class="talk-title">{{ talk.title }}</h4>
+  <div class="talk-links">
+    {% if talk.slides %}
+    <a href="{{ talk.slides }}" class="btn btn-sm btn-secondary" target="_blank" rel="noopener">
+      Slides
+    </a>
+    {% endif %}
+    {% if talk.video %}
+    <a href="{{ talk.video }}" class="btn btn-sm btn-secondary" target="_blank" rel="noopener">
+      Video
+    </a>
+    {% endif %}
+    {% if talk.code %}
+    <a href="{{ talk.code }}" class="btn btn-sm btn-secondary" target="_blank" rel="noopener">
+      Code
+    </a>
+    {% endif %}
+  </div>
 </div>
-</li>
-
 {% endfor %}
-</ul>
+</div>
+
+<style>
+.talks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.talk-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.talk-item:last-child {
+  border-bottom: none;
+}
+
+.talk-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.talk-links {
+  display: flex;
+  gap: 0.5rem;
+}
+</style>

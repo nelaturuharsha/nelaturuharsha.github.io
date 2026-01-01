@@ -1,0 +1,122 @@
+// =============================================================================
+// Dark Mode
+// =============================================================================
+
+// Dark mode is applied via data-theme="dark" on the html element
+// This file contains additional dark mode specific styles
+
+// -----------------------------------------------------------------------------
+// Dark Mode Variables as CSS Custom Properties
+// -----------------------------------------------------------------------------
+
+:root {
+  // Light mode (default)
+  --bg-primary: #{$background};
+  --bg-secondary: #{$background-alt};
+  --bg-surface: #{$surface};
+  --text-primary: #{$text};
+  --text-secondary: #{$text-light};
+  --text-muted: #{$text-muted};
+  --primary: #{$primary-dark};
+  --primary-light: #{$primary-light};
+  --border-color: #{$gray-200};
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #{$bg-dark};
+  --bg-secondary: #{$bg-dark-alt};
+  --bg-surface: #{$surface-dark};
+  --text-primary: #{$text-dark};
+  --text-secondary: #{$text-dark};
+  --text-muted: #{$text-dark-muted};
+  --primary: #{$primary-dark-mode};
+  --primary-light: rgba(#{red($primary-dark-mode)}, #{green($primary-dark-mode)}, #{blue($primary-dark-mode)}, 0.2);
+  --border-color: #{$gray-700};
+  --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+// Auto dark mode based on OS preference (when no explicit theme set)
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-primary: #{$bg-dark};
+    --bg-secondary: #{$bg-dark-alt};
+    --bg-surface: #{$surface-dark};
+    --text-primary: #{$text-dark};
+    --text-secondary: #{$text-dark};
+    --text-muted: #{$text-dark-muted};
+    --primary: #{$primary-dark-mode};
+    --primary-light: rgba(#{red($primary-dark-mode)}, #{green($primary-dark-mode)}, #{blue($primary-dark-mode)}, 0.2);
+    --border-color: #{$gray-700};
+    --shadow-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Dark Mode Toggle Button
+// -----------------------------------------------------------------------------
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: all $transition;
+
+  &:hover {
+    background-color: var(--bg-secondary);
+    color: var(--primary);
+    border-color: var(--primary);
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    transition: transform $transition;
+  }
+
+  // Sun icon (shown in dark mode)
+  .icon-sun {
+    display: none;
+  }
+
+  // Moon icon (shown in light mode)
+  .icon-moon {
+    display: block;
+  }
+}
+
+[data-theme="dark"] .theme-toggle,
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle {
+    .icon-sun {
+      display: block;
+    }
+
+    .icon-moon {
+      display: none;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Smooth Transition for Theme Changes
+// -----------------------------------------------------------------------------
+
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// Disable transitions during theme change to prevent flash
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition: none !important;
+}

@@ -1,42 +1,36 @@
 ---
 title: Publications
-layout: default
+layout: page
 permalink: /publications/
-published: true
-order: 3
-profile:
-  align: right
-  image: profile.png
+description: Academic publications and research papers
 ---
 
-## Publications
+<div class="publications-list">
+{% for pub in site.data.publications %}
+<article class="publication">
+  <h3 class="publication-title">
+    {% if pub.url %}
+    <a href="{{ pub.url }}" target="_blank" rel="noopener">{{ pub.title }}</a>
+    {% else %}
+    {{ pub.title }}
+    {% endif %}
+  </h3>
 
-<div id="newstable" style="
-/* padding-left: 0.7em; padding-right: 0.7em; padding-top: 0.7em; padding-bottom: 0.7em; */
-border: none;
-"><table style="width:100%"><col width="100%">
-{% for publication in site.data.publications %}<tr><td><p>
-{% if publication.url %}
-<em><a href="{{ publication.url }}">{{ publication.title }}</a></em>{% 
-else %}
-<em>{{ publication.title }}</em>{% 
-endif %}
-</p>
+  <p class="publication-authors">
+    {% for author in pub.authors %}{% if author == site.title %}<span class="author-self">{{ author }}</span>{% else %}{{ author }}{% endif %}{% if forloop.last == false %}, {% endif %}{% endfor %}
+  </p>
 
-<p>
-{% for author in publication.authors %}{% 
-if author == site.title %}<i>{{ author }}</i>{% else %}{{ author }}{% endif %}{% 
-if forloop.last == false %}, {% endif %}{% endfor %}.
-</p>
+  {% if pub.description %}
+  <p class="publication-venue">{{ pub.description }}{% if pub.year %}, {{ pub.year }}{% endif %}</p>
+  {% endif %}
 
-<p>
-{% if publication.description %}
-{{ publication.description }}{% endif %}{%
-if publication.year %}, {{ publication.year }}{% endif %}.
-
-<!-- {% if forloop.last == false %}
-<tr><td colspan="1"><hr></td></tr>
-{% endif %} -->
-</p>
-
+  {% if pub.url %}
+  <div class="publication-links">
+    <a href="{{ pub.url }}" class="btn btn-sm btn-primary" target="_blank" rel="noopener">
+      View Paper
+    </a>
+  </div>
+  {% endif %}
+</article>
 {% endfor %}
+</div>

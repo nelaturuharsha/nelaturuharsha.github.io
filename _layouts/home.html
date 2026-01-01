@@ -1,0 +1,102 @@
+---
+layout: base
+---
+
+<div class="container">
+  <!-- Hero Section -->
+  <section class="hero section">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">{{ site.title }}</h1>
+        <p class="hero-subtitle lead">{{ site.description }}</p>
+        {{ content }}
+        <div class="hero-actions">
+          {% include social-links.html %}
+        </div>
+      </div>
+      <div class="hero-image">
+        {% if page.profile_image %}
+        <img src="{{ page.profile_image | relative_url }}" alt="{{ site.title }}" class="profile-image">
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  <!-- News Section -->
+  {% if site.data.news.size > 0 %}
+  <section class="section" id="news">
+    <div class="section-header">
+      <h2>News</h2>
+    </div>
+    <div class="news-list">
+      {% assign sorted_news = site.data.news | sort: "date" | reverse %}
+      {% for item in sorted_news limit: 8 %}
+      <article class="news-item">
+        <time class="news-date" datetime="{{ item.date }}">
+          {{ item.date | date: "%b %Y" }}
+        </time>
+        <div class="news-content">
+          {% if item.category %}
+          <span class="tag news-category">{{ item.category }}</span>
+          {% endif %}
+          {% if item.link %}
+          <a href="{{ item.link }}">{{ item.content }}</a>
+          {% else %}
+          {{ item.content }}
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+</div>
+
+<style>
+.hero {
+  padding: 2rem 0;
+}
+
+.hero-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  margin-bottom: 1.5rem;
+}
+
+.hero-actions {
+  margin-top: 2rem;
+}
+
+.hero-image {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-actions .social-links {
+    justify-content: center;
+  }
+}
+</style>

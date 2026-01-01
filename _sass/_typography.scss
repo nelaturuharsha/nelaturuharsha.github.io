@@ -1,0 +1,300 @@
+// =============================================================================
+// Typography
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Font Imports
+// -----------------------------------------------------------------------------
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+// -----------------------------------------------------------------------------
+// Base Typography
+// -----------------------------------------------------------------------------
+
+body {
+  font-family: $font-sans;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  color: $text;
+  background-color: $background;
+}
+
+// -----------------------------------------------------------------------------
+// Headings
+// -----------------------------------------------------------------------------
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-tight;
+  color: $text;
+  margin-bottom: $space-4;
+}
+
+h1 {
+  font-size: $font-size-4xl;
+  letter-spacing: -0.025em;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: $font-size-3xl;
+  }
+}
+
+h2 {
+  font-size: $font-size-3xl;
+  letter-spacing: -0.02em;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: $font-size-2xl;
+  }
+}
+
+h3 {
+  font-size: $font-size-2xl;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: $font-size-xl;
+  }
+}
+
+h4 {
+  font-size: $font-size-xl;
+}
+
+h5 {
+  font-size: $font-size-lg;
+}
+
+h6 {
+  font-size: $font-size-base;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+// -----------------------------------------------------------------------------
+// Body Text
+// -----------------------------------------------------------------------------
+
+p {
+  margin-bottom: $space-4;
+  line-height: $line-height-relaxed;
+}
+
+.lead {
+  font-size: $font-size-lg;
+  color: $text-light;
+  line-height: $line-height-relaxed;
+}
+
+small,
+.text-sm {
+  font-size: $font-size-sm;
+}
+
+.text-xs {
+  font-size: $font-size-xs;
+}
+
+.text-muted {
+  color: $text-muted;
+}
+
+// -----------------------------------------------------------------------------
+// Links
+// -----------------------------------------------------------------------------
+
+a {
+  color: $primary-dark;
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $primary-darker;
+  }
+}
+
+// Content links (with underline)
+.content a,
+article a {
+  color: $primary-dark;
+  text-decoration: underline;
+  text-decoration-color: rgba($primary-dark, 0.3);
+  text-underline-offset: 2px;
+  transition: text-decoration-color $transition-fast, color $transition-fast;
+
+  &:hover {
+    color: $primary-darker;
+    text-decoration-color: $primary-darker;
+  }
+}
+
+// Highlight link style
+.link-highlight {
+  background: linear-gradient(to bottom, transparent 60%, rgba($highlight, 0.4) 60%);
+  transition: background $transition-fast;
+
+  &:hover {
+    background: linear-gradient(to bottom, transparent 40%, rgba($highlight, 0.6) 40%);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Lists
+// -----------------------------------------------------------------------------
+
+.content ul,
+.content ol,
+article ul,
+article ol {
+  margin-bottom: $space-4;
+  padding-left: $space-6;
+}
+
+.content ul,
+article ul {
+  list-style-type: disc;
+}
+
+.content ol,
+article ol {
+  list-style-type: decimal;
+}
+
+.content li,
+article li {
+  margin-bottom: $space-2;
+  line-height: $line-height-relaxed;
+}
+
+// -----------------------------------------------------------------------------
+// Blockquotes
+// -----------------------------------------------------------------------------
+
+blockquote {
+  margin: $space-6 0;
+  padding: $space-4 $space-6;
+  border-left: 4px solid $primary;
+  background-color: $background-alt;
+  border-radius: 0 $radius $radius 0;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  cite {
+    display: block;
+    margin-top: $space-3;
+    font-size: $font-size-sm;
+    color: $text-muted;
+    font-style: normal;
+
+    &::before {
+      content: "— ";
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Code
+// -----------------------------------------------------------------------------
+
+code {
+  font-family: $font-mono;
+  font-size: 0.9em;
+  padding: 0.125em 0.375em;
+  background-color: $gray-100;
+  border-radius: $radius-sm;
+  color: $accent;
+}
+
+pre {
+  font-family: $font-mono;
+  font-size: $font-size-sm;
+  line-height: $line-height-relaxed;
+  margin: $space-6 0;
+  padding: $space-4;
+  background-color: $gray-900;
+  color: $gray-100;
+  border-radius: $radius-md;
+  overflow-x: auto;
+
+  code {
+    padding: 0;
+    background: none;
+    color: inherit;
+    font-size: inherit;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Horizontal Rule
+// -----------------------------------------------------------------------------
+
+hr {
+  border: none;
+  height: 1px;
+  background: $gray-200;
+  margin: $space-8 0;
+}
+
+// -----------------------------------------------------------------------------
+// Selection
+// -----------------------------------------------------------------------------
+
+::selection {
+  background-color: rgba($primary, 0.3);
+  color: $text;
+}
+
+// -----------------------------------------------------------------------------
+// Dark Mode Typography
+// -----------------------------------------------------------------------------
+
+[data-theme="dark"] {
+  body {
+    color: $text-dark;
+    background-color: $bg-dark;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $text-dark;
+  }
+
+  a {
+    color: $primary-dark-mode;
+
+    &:hover {
+      color: lighten($primary-dark-mode, 10%);
+    }
+  }
+
+  .content a,
+  article a {
+    color: $primary-dark-mode;
+    text-decoration-color: rgba($primary-dark-mode, 0.4);
+
+    &:hover {
+      color: lighten($primary-dark-mode, 10%);
+      text-decoration-color: $primary-dark-mode;
+    }
+  }
+
+  code {
+    background-color: $bg-dark-alt;
+    color: $highlight;
+  }
+
+  blockquote {
+    background-color: $bg-dark-alt;
+    border-left-color: $primary-dark-mode;
+  }
+
+  hr {
+    background: $gray-700;
+  }
+
+  ::selection {
+    background-color: rgba($primary-dark-mode, 0.4);
+    color: $text-dark;
+  }
+}

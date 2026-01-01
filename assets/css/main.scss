@@ -1,33 +1,43 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
+# Main stylesheet entry point
 ---
-
 
 @charset "utf-8";
 
-// Width of the content area
-$content-width:    900px;
-$on-phone:         450px;
-$on-palm:          660px;
-$on-laptop:        1000px;
+// =============================================================================
+// Import Order Matters!
+// =============================================================================
 
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
+// 1. Variables & Design Tokens (must come first)
+@import 'variables';
+
+// 2. Reset & Base
+@import 'reset';
+
+// 3. Typography
+@import 'typography';
+
+// 4. Layout utilities
+@import 'layout';
+
+// 5. Components
+@import 'components';
+
+// 6. Header & Footer
+@import 'header';
+@import 'footer';
+
+// 7. Page-specific styles
+@import 'shelf';
+
+// 8. Dark mode (should be last to override)
+@import 'dark-mode';
+
+// 9. Syntax highlighting for code blocks
+@import 'syntax-highlighting';
+
+// Legacy support for pages still using old class names
+.post-headline {
+  @extend h1;
 }
 
-// Import partials from `sass_dir` (defaults to `_sass`)
-// Do not make any changes to this file. Go to /_sass and find the appropriate SCSS file and make changes there.
-
-// JN: For now, split @import to anable conditional import of CSS. Also. @import may be deprecated soon so plan
-// for this change
-
-@import 'variables';
-@import 'footer-social';
-@import 'projects';
-@import 'profile';
-@import 'footer';
-@import 'style';
-@import 'google-fonts';
-@import 'syntax-highlighting';

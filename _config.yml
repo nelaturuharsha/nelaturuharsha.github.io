@@ -1,41 +1,59 @@
-### your site title here
-
+# Site settings
 title: Sree Harsha Nelaturu
 description: Deep Learning Researcher
 
-baseurl: "" #name of GitHub repository
-url: "/" #custom url to be used instead of GitHub repository
+baseurl: ""
+url: "/"
 email: nelaturu.harsha@gmail.com
 
+# Social media
+twitter: "Sree_Harsha_N"
+github: "nelaturuharsha"
+linkedin: "sreeharshanelat"
+# orcid: "your-orcid-id"
+# scholar: "https://scholar.google.com/citations?user=your-id"
+
 # Pagination
-paginate: 4
+paginate: 6
 permalink: /blog/:year/:title/
 paginate_path: /blog/page:num/
 
-# Social media links in footer
-twitter: "Sree_Harsha_N"
-github: "nelaturuharsha"
-
 # Markdown
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
-# optimization -> compress.html
-compress_html:
-  clippings: [html,div, p, ul, td, h1, h2, h3, h4,link, meta, footer, nav, img, header, hr, br, head, style, li, ul, ol, time, main, script, title]
-  comments: ["<!-- ", " -->"]
-  endings: [all]
-  ignore:
-    envs: [local]
-  blanklines: false
-  profile: false
-  startings: []
-
+# SCSS
 sass:
-  sass_dir: /assets/css/_sass
+  sass_dir: _sass
   style: compressed
 
-include: [_pages, _data]
+# Include/Exclude
+include:
+  - _pages
+  - _data
 
 exclude:
   - README.md
   - LICENSE.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: "_pages"
+    values:
+      layout: "page"
+
+# Plugins
+plugins:
+  - jekyll-paginate

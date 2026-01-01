@@ -1,37 +1,68 @@
+# Books - with enhanced metadata for the interactive shelf
 books:
   - title: Gone with the wind
     author: Margaret Mitchell
     image: gone-with-the-wind.png
+    status: completed
+    goodreads: https://www.goodreads.com/book/show/18405.Gone_with_the_Wind
+    notes: A sweeping epic of the American South during the Civil War era.
+
   - title: Meditations
     author: Marcus Aurelius
     image: meditations.png
+    status: reading
+    goodreads: https://www.goodreads.com/book/show/30659.Meditations
+    notes: Timeless Stoic philosophy from the Roman Emperor.
+
   - title: Jane Austen Mysteries
     author: Stephanie Barron
     image: jane-austen-mysteries.png
+    status: want-to-read
+    goodreads: https://www.goodreads.com/series/42388-jane-austen-mysteries
+
   - title: Memoirs of a Polar Bear
     author: Yoko Tawada
     image: memoirs-of-a-polar-bear.jpg
+    status: completed
+    goodreads: https://www.goodreads.com/book/show/28220878-memoirs-of-a-polar-bear
 
+# Music - Albums and Songs
 music:
   albums:
     - title: Mahal (EP)
       artist: Glass Beams
       image: mahal-(ep).png
+      spotify: https://open.spotify.com/album/4uYNfqLcdNOzNqPxMB3iJK
+      notes: Mesmerizing psychedelic sounds from Melbourne.
+
     - title: Dark Before Dawn
       artist: Breaking Benjamin
       image: dark-before-dawn.png
+      spotify: https://open.spotify.com/album/0YDmNjPWgqGDCekFKndvab
+      notes: Powerful alternative rock comeback album.
+
     - title: Modal Soul
       artist: Nujabes
       image: modal-soul.png
+      spotify: https://open.spotify.com/album/2bM52JxqC3uy2MzM9RsV6d
+      notes: The quintessential lo-fi hip hop masterpiece.
+
   songs:
     - title: Alors on Danse
       artist: Stromae
       image: alors-on-danse.jpeg
+      spotify: https://open.spotify.com/track/2DnJjbjNTV9Nd5NOa1KGba
+
     - title: 8th Commandment
       artist: Sonata Arctica
       image: ecliptica.jpeg
+      spotify: https://open.spotify.com/track/2Ac4PmPxDcKHGMHrI3mfZj
 
+# Movies
 movies:
-  - title: (Tillu)^2 
+  - title: "(Tillu)^2"
     year: 2024
     image: tillu-squared.jpeg
+    rating: 4
+    letterboxd: https://letterboxd.com/film/tillu-square/
+    notes: Hilarious Telugu comedy sequel.

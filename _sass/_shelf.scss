@@ -1,0 +1,570 @@
+// =============================================================================
+// Interactive Media Shelf
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Shelf Container
+// -----------------------------------------------------------------------------
+
+.shelf-section {
+  margin-bottom: $space-16;
+}
+
+.shelf-title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  margin-bottom: $space-6;
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+
+  .shelf-icon {
+    font-size: $font-size-2xl;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Bookshelf
+// -----------------------------------------------------------------------------
+
+.bookshelf {
+  position: relative;
+  padding: $space-6 $space-4;
+  background: linear-gradient(to bottom, transparent 0%, rgba($primary, 0.05) 100%);
+  border-radius: $radius-lg;
+}
+
+.shelf-row {
+  display: flex;
+  gap: $space-4;
+  padding-bottom: $space-4;
+  overflow-x: auto;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $gray-100;
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $gray-300;
+    border-radius: 3px;
+  }
+}
+
+.shelf-edge {
+  position: relative;
+  height: 20px;
+  background: linear-gradient(to bottom, $primary-dark 0%, darken($primary-dark, 10%) 100%);
+  border-radius: 0 0 $radius $radius;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.15),
+    inset 0 2px 0 rgba(255, 255, 255, 0.1);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Book Item
+// -----------------------------------------------------------------------------
+
+.book-item {
+  flex-shrink: 0;
+  width: 120px;
+  perspective: 1000px;
+  cursor: pointer;
+
+  &:hover .book-cover {
+    transform: rotateY(-25deg) translateZ(20px);
+  }
+
+  &:hover .book-info {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.book-cover-wrapper {
+  position: relative;
+  height: 180px;
+  transform-style: preserve-3d;
+}
+
+.book-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: $radius-sm;
+  box-shadow:
+    2px 2px 4px rgba(0, 0, 0, 0.2),
+    4px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform $transition-slow;
+  transform-origin: left center;
+
+  // Spine effect
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), transparent);
+  }
+}
+
+.book-info {
+  margin-top: $space-3;
+  opacity: 0.8;
+  transform: translateY(5px);
+  transition: all $transition;
+}
+
+.book-title {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $text;
+  line-height: $line-height-tight;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: $space-1;
+}
+
+.book-author {
+  font-size: $font-size-xs;
+  color: $text-muted;
+}
+
+.book-status {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-1;
+  margin-top: $space-2;
+  padding: 2px $space-2;
+  font-size: 10px;
+  font-weight: $font-weight-medium;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: $radius-sm;
+
+  &.reading {
+    background-color: rgba($highlight, 0.2);
+    color: darken($highlight, 25%);
+  }
+
+  &.completed {
+    background-color: rgba($success, 0.15);
+    color: darken($success, 10%);
+  }
+
+  &.want-to-read {
+    background-color: rgba($primary, 0.2);
+    color: $primary-darker;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Vinyl Record Display
+// -----------------------------------------------------------------------------
+
+.vinyl-shelf {
+  display: flex;
+  gap: $space-6;
+  flex-wrap: wrap;
+  padding: $space-4;
+}
+
+.vinyl-item {
+  position: relative;
+  width: 180px;
+  cursor: pointer;
+
+  &:hover .vinyl-record {
+    transform: translateX(30px);
+  }
+
+  &:hover .vinyl-info {
+    opacity: 1;
+  }
+}
+
+.vinyl-sleeve {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: $radius;
+  overflow: hidden;
+  box-shadow: $shadow-md;
+  z-index: 2;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.vinyl-record {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    $gray-900 0%,
+    $gray-900 15%,
+    $gray-800 16%,
+    $gray-800 25%,
+    $gray-700 26%,
+    $gray-900 27%,
+    $gray-800 50%,
+    $gray-900 51%,
+    $gray-800 75%,
+    $gray-900 76%,
+    $gray-800 100%
+  );
+  box-shadow:
+    inset 0 0 20px rgba(0, 0, 0, 0.5),
+    0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  transition: transform $transition-slow;
+
+  // Center label
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, $accent 0%, darken($accent, 15%) 100%);
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.3);
+  }
+}
+
+.vinyl-info {
+  margin-top: $space-3;
+  opacity: 0.8;
+  transition: opacity $transition;
+}
+
+.vinyl-title {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $text;
+  margin-bottom: $space-1;
+}
+
+.vinyl-artist {
+  font-size: $font-size-xs;
+  color: $text-muted;
+}
+
+// -----------------------------------------------------------------------------
+// Movie Posters
+// -----------------------------------------------------------------------------
+
+.movie-wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: $space-4;
+}
+
+.movie-item {
+  position: relative;
+  cursor: pointer;
+  border-radius: $radius-md;
+  overflow: hidden;
+  box-shadow: $shadow;
+  transition: transform $transition, box-shadow $transition;
+
+  &:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: $shadow-xl;
+  }
+
+  &:hover .movie-overlay {
+    opacity: 1;
+  }
+}
+
+.movie-poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+.movie-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba($gray-900, 0.95) 0%,
+    rgba($gray-900, 0.7) 40%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity $transition;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: $space-3;
+}
+
+.movie-title {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: white;
+  margin-bottom: $space-1;
+}
+
+.movie-year {
+  font-size: $font-size-xs;
+  color: rgba(white, 0.7);
+}
+
+.movie-rating {
+  display: flex;
+  gap: 2px;
+  margin-top: $space-2;
+
+  .star {
+    color: $highlight;
+    font-size: $font-size-xs;
+  }
+
+  .star-empty {
+    color: rgba(white, 0.3);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Songs List (Alternative to vinyl for singles)
+// -----------------------------------------------------------------------------
+
+.songs-list {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.song-item {
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+  padding: $space-3 $space-4;
+  background-color: $surface;
+  border-radius: $radius;
+  transition: all $transition;
+
+  &:hover {
+    background-color: $gray-50;
+    transform: translateX(4px);
+  }
+}
+
+.song-cover {
+  width: 48px;
+  height: 48px;
+  border-radius: $radius-sm;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.song-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.song-title {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $text;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.song-artist {
+  font-size: $font-size-xs;
+  color: $text-muted;
+}
+
+.song-link {
+  color: $text-muted;
+  transition: color $transition;
+
+  &:hover {
+    color: $success;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Media Links
+// -----------------------------------------------------------------------------
+
+.media-links {
+  display: flex;
+  gap: $space-2;
+  margin-top: $space-2;
+  flex-wrap: wrap;
+}
+
+.media-link {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-1;
+  padding: $space-1 $space-2;
+  font-size: $font-size-xs;
+  color: $text-muted;
+  background-color: $gray-100;
+  border-radius: $radius-sm;
+  transition: all $transition;
+
+  &:hover {
+    color: $primary-dark;
+    background-color: $primary-light;
+  }
+
+  svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Personal Notes (expandable)
+// -----------------------------------------------------------------------------
+
+.media-notes {
+  margin-top: $space-3;
+  padding: $space-3;
+  background-color: $gray-50;
+  border-radius: $radius;
+  border-left: 3px solid $primary;
+  font-size: $font-size-sm;
+  color: $text-light;
+  line-height: $line-height-relaxed;
+}
+
+// -----------------------------------------------------------------------------
+// Dark Mode
+// -----------------------------------------------------------------------------
+
+[data-theme="dark"] {
+  .bookshelf {
+    background: linear-gradient(to bottom, transparent 0%, rgba($primary-dark-mode, 0.1) 100%);
+  }
+
+  .shelf-edge {
+    background: linear-gradient(to bottom, $gray-700 0%, $gray-800 100%);
+  }
+
+  .book-title,
+  .vinyl-title,
+  .song-title {
+    color: $text-dark;
+  }
+
+  .book-author,
+  .vinyl-artist,
+  .song-artist {
+    color: $text-dark-muted;
+  }
+
+  .book-status {
+    &.reading {
+      color: $highlight;
+    }
+
+    &.completed {
+      color: $success;
+    }
+
+    &.want-to-read {
+      color: $primary-dark-mode;
+    }
+  }
+
+  .song-item {
+    background-color: $surface-dark;
+
+    &:hover {
+      background-color: $bg-dark-alt;
+    }
+  }
+
+  .media-link {
+    background-color: $bg-dark-alt;
+    color: $text-dark-muted;
+
+    &:hover {
+      background-color: rgba($primary-dark-mode, 0.2);
+      color: $primary-dark-mode;
+    }
+  }
+
+  .media-notes {
+    background-color: $bg-dark-alt;
+    border-left-color: $primary-dark-mode;
+    color: $text-dark;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Responsive
+// -----------------------------------------------------------------------------
+
+@media (max-width: $breakpoint-md) {
+  .book-item {
+    width: 100px;
+  }
+
+  .book-cover-wrapper {
+    height: 150px;
+  }
+
+  .vinyl-item,
+  .vinyl-sleeve {
+    width: 150px;
+    height: 150px;
+  }
+
+  .vinyl-record {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .vinyl-shelf {
+    justify-content: center;
+  }
+
+  .movie-wall {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

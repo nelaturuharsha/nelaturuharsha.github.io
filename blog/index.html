@@ -1,57 +1,162 @@
 ---
-layout: default
-order: 4
-profile:
-  align: right
-  image: profile.png
+layout: base
+title: Blog
+permalink: /blog/
 ---
 
-<h2>Blog</h2>
+<div class="container">
+  <header class="section-header">
+    <h1>Blog</h1>
+    <p>Thoughts, tutorials, and musings</p>
+  </header>
 
-<br>
+  <div class="blog-list">
+    {% for post in paginator.posts %}
+    <article class="blog-post-preview">
+      <header class="post-preview-header">
+        <h2 class="post-preview-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h2>
+        <time class="post-preview-date" datetime="{{ post.date | date_to_xmlschema }}">
+          {{ post.date | date: "%B %d, %Y" }}
+        </time>
+      </header>
+      <p class="post-preview-excerpt">
+        {{ post.excerpt | strip_html | truncate: 200 }}
+      </p>
+      <a href="{{ post.url | relative_url }}" class="post-preview-link">
+        Read more &rarr;
+      </a>
+    </article>
+    {% endfor %}
+  </div>
 
-<div class="article-list">
-  {% for post in paginator.posts %}
-    <h3 style="margin-bottom: -1.5rem; width: 75%; font-weight: normal;"
-    ><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h3>
-    <p style="text-align: right; color: #999; margin-top: -1.5rem;"
-    "><small>{{ post.date | date: "%b %-d, %Y" }}</small></p>
-    <p style="margin-top: 0px; margin-bottom: 1rem;"
-    >{{post.excerpt | strip_html}}</p>
-    <!-- date to the left -->
-  {% endfor %}
-</div>
-
-<!-- pagination -->
-{% if paginator.total_pages > 1 %}
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
-  {% else %}
-    <span>&laquo; Prev</span>
-  {% endif %}
-
-  {% for page in (1..paginator.total_pages) %}
-    {% if page == paginator.page %}
-      <span>{{ page }}</span>
-    {% elsif page == 1 %}
-      <a href="{{site.baseurl}}/blog">{{ page }}</a>
+  {% if paginator.total_pages > 1 %}
+  <nav class="pagination" aria-label="Blog pagination">
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-link pagination-prev">
+      &larr; Newer
+    </a>
     {% else %}
-      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+    <span class="pagination-link pagination-prev disabled">&larr; Newer</span>
     {% endif %}
-  {% endfor %}
 
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
-  {% else %}
-    <span>Next &raquo;</span>
+    <span class="pagination-info">
+      Page {{ paginator.page }} of {{ paginator.total_pages }}
+    </span>
+
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-link pagination-next">
+      Older &rarr;
+    </a>
+    {% else %}
+    <span class="pagination-link pagination-next disabled">Older &rarr;</span>
+    {% endif %}
+  </nav>
+  {% endif %}
+
+  {% if site.posts.size == 0 %}
+  <div class="empty-state">
+    <p>No posts yet. Check back soon!</p>
+  </div>
   {% endif %}
 </div>
-{% endif %}
 
+<style>
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 
-<!-- Link to archive -->
+.blog-post-preview {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+}
 
-<div class="pagination">
-  <a href="{{site.baseurl}}/archive/">Archive</a>
-</div>
+.blog-post-preview:last-child {
+  border-bottom: none;
+}
+
+.post-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.post-preview-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.post-preview-title a {
+  color: var(--text-primary, #2d3748);
+  text-decoration: none;
+}
+
+.post-preview-title a:hover {
+  color: var(--primary, #5b9cad);
+}
+
+.post-preview-date {
+  font-size: 0.875rem;
+  color: var(--text-muted, #718096);
+  white-space: nowrap;
+}
+
+.post-preview-excerpt {
+  color: var(--text-secondary, #4a5568);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.post-preview-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--primary, #5b9cad);
+}
+
+.post-preview-link:hover {
+  text-decoration: underline;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color, #e2e8f0);
+}
+
+.pagination-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--primary, #5b9cad);
+}
+
+.pagination-link:hover {
+  text-decoration: underline;
+}
+
+.pagination-link.disabled {
+  color: var(--text-muted, #718096);
+  cursor: default;
+}
+
+.pagination-info {
+  font-size: 0.875rem;
+  color: var(--text-muted, #718096);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 0;
+  color: var(--text-muted, #718096);
+}
+</style>
